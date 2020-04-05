@@ -328,7 +328,7 @@ def generationPage(all_entity):
 
     # print (newMap)
     print ("_"*30)
-    print (markup)
+    # print (markup)
 
     key = generate_key()
     writeHtml(markup,key+".html")
