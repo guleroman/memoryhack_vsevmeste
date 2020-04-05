@@ -236,25 +236,25 @@ def generationPage(all_entity):
                     <div name="border_color" class="flex flex-col shadow rounded text-gray-800 p-2
                         relative bg-gray-100" style="margin: .5rem; width:auto;height: auto;">
                         <div class="relative" style="">
-                            <div class="flex flex-col" style="flex-direction: column;"><img id="acc_image" style="max-height: 150px;width: auto;" class="rounded-lg " src="https://vr-vyksa.ru/media/images/37_ilktlts.max-1200x800.jpg">
+                            <div class="flex flex-col" style="flex-direction: column;"><img id="acc_image" style="max-height: 150px;width: auto;" class="rounded-lg " src="https://sun9-24.userapi.com/c831409/v831409524/f9b24/tJ9lmx2jnTI.jpg">
                             </div>
                         </div>
                         </div><div name="border_color" class="flex flex-col shadow rounded text-gray-800 p-2
                         relative bg-gray-100" style="margin: .5rem; width:auto;height: auto;">
                         <div class="relative" style="">
-                            <div class="flex flex-col" style="flex-direction: column;"><img id="acc_image" style="max-height: 150px;width: auto;" class="rounded-lg " src="https://cs6.pikabu.ru/post_img/big/2014/04/07/6/1396860636_1421982419.jpg">
+                            <div class="flex flex-col" style="flex-direction: column;"><img id="acc_image" style="max-height: 150px;width: auto;" class="rounded-lg " src="https://sun9-12.userapi.com/c847020/v847020524/4019f/O09mb40lnbM.jpg">
                             </div>
                         </div>
                         </div><div name="border_color" class="flex flex-col shadow rounded text-gray-800 p-2
                         relative bg-gray-100" style="margin: .5rem; width:auto;height: auto;">
                         <div class="relative" style="">
-                            <div class="flex flex-col" style="flex-direction: column;"><img id="acc_image" style="max-height: 150px;width: auto;" class="rounded-lg " src="https://www.ugra-news.ru/upload/iblock/c77/1128887953.jpg">
+                            <div class="flex flex-col" style="flex-direction: column;"><img id="acc_image" style="max-height: 150px;width: auto;" class="rounded-lg " src="https://sun9-49.userapi.com/c629400/v629400405/549/I1DMCShnup8.jpg">
                             </div>
                         </div>
                         </div><div name="border_color" class="flex flex-col shadow rounded text-gray-800 p-2
                         relative bg-gray-100" style="margin: .5rem; width:auto;height: auto;">
                         <div class="relative" style="">
-                            <div class="flex flex-col" style="flex-direction: column;"><img id="acc_image" style="max-height: 150px;width: auto;" class="rounded-lg " src="https://www.penza-press.ru/uploads/news/2020/01_2020/lenta/28/458675476.jpg">
+                            <div class="flex flex-col" style="flex-direction: column;"><img id="acc_image" style="max-height: 150px;width: auto;" class="rounded-lg " src="https://sun9-24.userapi.com/c831409/v831409524/f9b24/tJ9lmx2jnTI.jpg">
                             </div>
                         </div>
                         </div>
