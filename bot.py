@@ -2,6 +2,7 @@
 import telebot
 from telebot import types
 import requests
+import json
 from key_generation import generate_key
 # from read_write import readData, writeDate
 
@@ -12,8 +13,8 @@ def SendToGeneratePage(payload):
     headers = {
     'Content-Type': 'application/json'
     }
-    print(payload.encode('utf-8'))
-    response = requests.request("POST", url, headers=headers, data = payload.encode('utf-8'))
+    print(json.dumps(payload))
+    response = requests.request("POST", url, headers=headers, data = json.dumps(payload))
     print(response.text.encode('utf8'))
     return(response.text.encode('utf8'))
 
