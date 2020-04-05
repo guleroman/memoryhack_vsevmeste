@@ -24,6 +24,6 @@ def writeHtml(new,name):
     # pathToFolderDone = os.path.join(path,"done")
     # if not os.path.exists(pathToFolderDone): #Если пути не существует создаем его
     #     os.makedirs(pathToFolderDone)
-    with open("./templates/"+name, 'w') as write_file:
+    with open("./templates/"+name, 'w', encoding='utf-8') as write_file:
         write_file.write(str(new))
     return('ok')
