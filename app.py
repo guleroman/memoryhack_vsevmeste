@@ -56,7 +56,7 @@ def generatePage():
         # logger.error({"error": "Twits not found"})
         return make_response(jsonify({"_status_code":404,"error":"Bad"}),404)
     else:
-        return make_response(jsonify({"status_code":200,"url":f"http://localhost:7000/{answer['key']}/"}),200)
+        return make_response(jsonify({"status_code":200,"url":f"http://194.67.91.175/{answer['key']}/"}),200)
 
 
 if __name__ == '__main__':

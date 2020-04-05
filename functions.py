@@ -10,11 +10,11 @@ def generationPage(all_entity):
     <html style="font-family: FontAwesome;" lang="en">
 
     <head>
-        <base href="http://localhost:7000/">
+        <base href="http://194.67.91.175/">
 
         <link rel="apple-touch-icon" sizes="180x180"
         href="static/images/apple-touch-icon.png">
-        <link rel="canonical" href="http://localhost:7000/">
+        <link rel="canonical" href="http://194.67.91.175/">
         <link rel="icon" type="image/png" sizes="16x16"
         href="static/images/favicon-16x16.png">
         <link rel="icon" type="image/png" sizes="192x192"
@@ -45,7 +45,7 @@ def generationPage(all_entity):
         <meta property="og:site_name" content="ВсеВместе - {all_entity['Name']}">
         <meta property="og:title" content="ВсеВместе - {all_entity['Name']}">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="http://localhost:7000/">
+        <meta property="og:url" content="http://194.67.91.175/">
         <title>ВсеВместе - {all_entity['Name']}</title>
         <link href="static/css/main.6f70e7c3.chunk.css" rel="stylesheet"
         type="text/css">
