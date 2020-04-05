@@ -107,7 +107,7 @@ def handle_docs_photo(message):
     key = generate_key()
     with open(f"{key}.jpg", 'wb') as new_file:
         new_file.write(downloaded_file)
-    dannnye.update({message.chat.id:{"foto":f"{key}.jpg"}})
+    dannnye[message.chat.id].update({"foto":f"{key}.jpg"})
     msg = bot.reply_to(message, ans)
     #msg =  bot.reply_to(message,"Получено")
     load_data(message, text = 'Спасибо! Введите дату или год рождения.')
@@ -122,7 +122,7 @@ def data_raw(message):
     ans="Введите город призыва"
     #load_city(message, text = ans)
     city = 'Дата: ' + message.text #Это дата
-    dannnye.update({message.chat.id:{"date_1":message.text}})
+    dannnye[message.chat.id].update({"date_1":message.text})
     bot.send_message(message.chat.id,city, reply_markup=markup)
     load_city(message, text = 'Спасибо! Введите город призыва.')
     bot.register_next_step_handler(message, city_raw)
@@ -133,10 +133,10 @@ def echo5(message):
     msg = bot.reply_to(message,"Введите город призыва")
 def city_raw(message):
     city = 'Город: ' + message.text#Это город
-    dannnye.update({message.chat.id:{"city":message.text}})
+    dannnye[message.chat.id].update({"city":message.text})
     bot.send_message(message.chat.id,city, reply_markup=markup)
     urll = SendToGeneratePage(dannnye[message.chat.id])
-    dannnye.update({message.chat.id:{"url":urll}})
+    dannnye[message.chat.id].update({"url":urll})
     load_report(message, text = 'Спасибо! Получите ссылку на отчет.')
     
 ###Отчет
