@@ -1,5 +1,6 @@
 from selenium import webdriver
 import time
+from urllib.parse import urlparse
 #from xvfbwrapper import Xvfb
 #vdisplay = Xvfb()
 #vdisplay.start()
@@ -21,6 +22,21 @@ def getNewMap(Units):
     c = ymap.find_element_by_css_selector('ymaps[class="ymaps-2-1-76-places-pane"]')
     alll = f"""<div><ymaps class="ymaps-2-1-76-ground-pane" style="position: sticky;">{a.get_attribute('innerHTML')}</ymaps><ymaps class="ymaps-2-1-76-areas-pane" style="position: sticky;">{b.get_attribute('innerHTML')}</ymaps><ymaps class="ymaps-2-1-76-places-pane" style="position: sticky;">{c.get_attribute('innerHTML')}</ymaps></div>"""
     driver.quit()
-  #  vdisplay.stop()
-
     return(alll)
+
+def getCorrectUnits(Units):
+    driver = webdriver.Chrome(executable_path=r'./chromedriver',options=chrome_options)
+    #Units = "130 стрелковый полк"
+    driver.get(f'https://pamyat-naroda.ru/warunit/?q={Units}')
+    time.sleep(2)
+    try:
+        ymap = driver.find_element_by_css_selector('a[class="heroes-list-item-name"]')
+        urll = urlparse(ymap.get_attribute('href'))
+        urll_2 = f"{urll.scheme}://{urll.hostname}/{urll.path}/"
+        Units = ymap.get_attribute('innerHTML')
+    except:
+        print('exception__')
+        Units = Units
+        urll_2 = ""
+    driver.quit()
+    return(urll_2,Units)

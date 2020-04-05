@@ -1,10 +1,11 @@
 from read_write import writeHtml
 from key_generation import generate_key
-from parseMap import getNewMap
+from parseMap import getNewMap, getCorrectUnits
 
 def generationPage(all_entity):
 
-    newMap = getNewMap(all_entity['Units'])
+    urll_2, Units = getCorrectUnits(all_entity['Units'])
+    newMap = getNewMap(Units)
 
     markup = f'''<!DOCTYPE html>
     <html style="font-family: FontAwesome;" lang="en">
@@ -181,9 +182,9 @@ def generationPage(all_entity):
                                 8v16z" style="color: #ff606c;">
                             </path>
                             </svg></span> <a
-                            href="https://pamyat-naroda.ru/warunit/{all_entity['Units']}/"
+                            href="{urll_2}"
                             rel="noopener noreferrer" target="_blank"><span
-                            class="text-gray-800 hover:text-brand">{all_entity['Units']}</span></a></li>  
+                            class="text-gray-800 hover:text-brand">{Units}</span></a></li>  
                     </ul>
                     </div>
                 </div>
