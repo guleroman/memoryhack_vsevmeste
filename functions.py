@@ -322,12 +322,29 @@ def generationPage(all_entity):
 
     </body>
 
-    </html>'''.encode('utf-8')
+    </html>'''
 
-    print (newMap)
+    markup = deEmojify(markup)
+
+    # print (newMap)
     print ("_"*30)
     print (markup)
 
     key = generate_key()
     writeHtml(markup,key+".html")
     return({"status_code":200,"key":key})
+
+
+def deEmojify(inputString):
+    returnString = ""
+    for character in inputString:
+        try:
+            character.encode("ascii")
+            returnString += character
+        except:
+            try:
+                character.encode("cp1251")
+                returnString += character
+            except:
+                returnString += ''
+    return returnString
