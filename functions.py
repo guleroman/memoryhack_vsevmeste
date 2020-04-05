@@ -211,7 +211,7 @@ def generationPage(all_entity):
                     <div class="relative" style="padding: .5rem;">
                     <div class="flex flex-row"><img id="acc_image" class="rounded-lg mr-4 h-12 w-h-12" style="height: 5rem;" src="https://upload.wikimedia.org/wikipedia/ru/a/a8/%D0%9C%D0%B5%D0%B4%D0%B0%D0%BB%D1%8C_%C2%AB%D0%97%D0%B0_%D0%BE%D1%82%D0%B2%D0%B0%D0%B3%D1%83%C2%BB_%28%D0%A0%D0%A4%29.png">
                         <div class="flex flex-col overflow-hidden max-w-2xs
-                        lg:max-w-full xl:max-w-2xs"><a id="acc_twitter_link" href="https://twitter.com/WKU_Inowroclaw" rel="noopener
+                        lg:max-w-full xl:max-w-2xs"><a id="acc_twitter_link" rel="noopener
                             noreferrer" target="_blank"><span class="break-all leading-none font-semibold text-xl
                             hover:text-brand whitespace-no-wrap" id="acc_name">Медаль «За отвагу»</span></a>
                             <a id="acc_username_2" rel="noopener
@@ -254,7 +254,7 @@ def generationPage(all_entity):
                         </div><div name="border_color" class="flex flex-col shadow rounded text-gray-800 p-2
                         relative bg-gray-100" style="margin: .5rem; width:auto;height: auto;">
                         <div class="relative" style="">
-                            <div class="flex flex-col" style="flex-direction: column;"><img id="acc_image" style="max-height: 150px;width: auto;" class="rounded-lg " src="https://sun9-24.userapi.com/c831409/v831409524/f9b24/tJ9lmx2jnTI.jpg">
+                            <div class="flex flex-col" style="flex-direction: column;"><img id="acc_image" style="max-height: 150px;width: auto;" class="rounded-lg " src="https://sun9-18.userapi.com/c824602/v824602524/126517/JJS5VbzDi1Y.jpg">
                             </div>
                         </div>
                         </div>
