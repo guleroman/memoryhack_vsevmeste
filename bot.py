@@ -40,7 +40,9 @@ def load_menu(message, text):
     itembtn2 = types.KeyboardButton('Этап 2. Добавить фотографию')
     itembtn3 = types.KeyboardButton('Этап 3. Ввести дату рождения')
     itembtn4 = types.KeyboardButton('Этап 4. Выбрать город призыва')
-    markup_menu.add(itembtn1, itembtn2, itembtn3, itembtn4)
+    itembtn5 = types.KeyboardButton('Этап 5. Выбрать подразделение (воинскую часть)')
+
+    markup_menu.add(itembtn1, itembtn2, itembtn3, itembtn4,itembtn5)
     url_button = types.InlineKeyboardButton(text="Сформировать отчет", url="https://ya.ru")
     markup_menu.add(url_button)
     bot.send_message(message.chat.id, text, reply_markup=markup_menu) 
@@ -59,12 +61,22 @@ def load_data(message, text):
     markup_menu.add(itembtn3)
     bot.send_message(message.chat.id, text, reply_markup=markup_menu)
 
+
+
 @bot.message_handler(commands=['menu_city'])
 def load_city(message, text):
     markup_menu = types.ReplyKeyboardMarkup(row_width=1)
     itembtn4 = types.KeyboardButton('Этап 4. Ввести город призыва')
     markup_menu.add(itembtn4)
-    bot.send_message(message.chat.id, text, reply_markup=markup_menu) 
+    bot.send_message(message.chat.id, text, reply_markup=markup_menu)
+
+@bot.message_handler(commands=['menu_vch'])
+def load_vch(message, text):
+    markup_menu = types.ReplyKeyboardMarkup(row_width=1)
+    itembtn5 = types.KeyboardButton('Этап 5. Ввести подразделение (воинскую часть)')
+    markup_menu.add(itembtn5)
+    bot.send_message(message.chat.id, text, reply_markup=markup_menu)
+
 @bot.message_handler(commands=['report'])
 def load_report(message, text):
     markup_menu = types.ReplyKeyboardMarkup(row_width=1)
@@ -135,9 +147,23 @@ def city_raw(message):
     city = 'Город: ' + message.text#Это город
     dannnye[message.chat.id].update({"city":message.text})
     bot.send_message(message.chat.id,city, reply_markup=markup)
+    load_city(message, text = 'Спасибо! Введите подразделение (воинскую часть)')
+    bot.register_next_step_handler(message, vch_raw)
+
+
+@bot.message_handler(func=lambda m: m.text is not None and 'Этап 5' in m.text)
+def echo6(message):   
+    msg = bot.reply_to(message,"Введите подразделение (воинскую часть)")
+
+def vch_raw(message):
+    #load_city(message, text = ans)
+    vch = 'Подразделение: ' + message.text #Это дата
+    dannnye[message.chat.id].update({"units":message.text})
+    bot.send_message(message.chat.id,vch, reply_markup=markup)
     urll = SendToGeneratePage(dannnye[message.chat.id])['url']
     dannnye[message.chat.id].update({"url":urll})
     load_report(message, text = 'Спасибо! Получите ссылку на отчет.')
+    
     
 ###Отчет
 @bot.message_handler(func=lambda m: m.text is not None and 'Получить отчет' in m.text)
