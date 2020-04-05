@@ -13,10 +13,11 @@ chrome_options.add_argument("user-agent=[Mozilla/5.0 (X11; Linux i586; rv:31.0) 
 chrome_options.add_argument("--no-sandbox")
 
 def getNewMap(urll_2):
-    driver = webdriver.Chrome(executable_path=r'./chromedriver',options=chrome_options)
-    driver.get(f'{urll_2}')
-    time.sleep(5)
     try:
+        driver = webdriver.Chrome(executable_path=r'./chromedriver',options=chrome_options)
+        driver.get(f'{urll_2}')
+        time.sleep(5)
+    
         ymap = driver.find_element_by_css_selector('ymaps[class="ymaps-2-1-76-inner-panes"]')
         a = ymap.find_element_by_css_selector('ymaps[class="ymaps-2-1-76-ground-pane"]')
         b = ymap.find_element_by_css_selector('ymaps[class="ymaps-2-1-76-areas-pane"]')
