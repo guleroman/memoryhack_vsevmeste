@@ -16,7 +16,7 @@ def SendToGeneratePage(payload):
     print(json.dumps(payload))
     response = requests.request("POST", url, headers=headers, data = json.dumps(payload))
     print(response.text.encode('utf8'))
-    return(response.text.encode('utf8'))
+    return(json.loads(response.text.encode('utf8')))
 
 
 dannnye = {
