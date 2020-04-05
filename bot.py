@@ -147,7 +147,7 @@ def city_raw(message):
     city = 'Город: ' + message.text#Это город
     dannnye[message.chat.id].update({"city":message.text})
     bot.send_message(message.chat.id,city, reply_markup=markup)
-    load_city(message, text = 'Спасибо! Введите подразделение (воинскую часть)')
+    load_vch(message, text = 'Спасибо! Введите подразделение (воинскую часть)')
     bot.register_next_step_handler(message, vch_raw)
 
 
