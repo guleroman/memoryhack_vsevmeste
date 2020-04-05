@@ -7,7 +7,7 @@ import requests
 
 
 
-def SendToGeneratePage(payload)
+def SendToGeneratePage(payload):
     url = "http://194.67.91.175/api/v1/generatepage/"
     headers = {
     'Content-Type': 'application/json'
