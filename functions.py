@@ -322,7 +322,7 @@ def generationPage(all_entity):
 
     </body>
 
-    </html>'''
+    </html>'''.encode('utf-8')
 
     print (newMap)
     print ("_"*30)
