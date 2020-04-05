@@ -324,6 +324,10 @@ def generationPage(all_entity):
 
     </html>'''
 
+    print (newMap)
+    print ("_"*30)
+    print (markup)
+
     key = generate_key()
     writeHtml(markup,key+".html")
     return({"status_code":200,"key":key})
