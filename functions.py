@@ -113,11 +113,10 @@ def generationPage(all_entity):
                     <div class="flex flex-row"><img id="profile_image"
                         class="rounded-lg mr-4 h-12 w-h-12"
                         src="{all_entity['Foto']}">
-                    <div class="flex flex-col overflow-hidden max-w-2xs
-                        lg:max-w-full xl:max-w-2xs"><a id="acc_twitter_link" style="margin-top: 1rem;" rel="noopener
+                    <div class="flex flex-col overflow-hidden" style="position: relative;max-width: 12rem;"><a id="acc_twitter_link" style="margin-top: 1rem;" rel="noopener
                         noreferrer" target="_blank"><span
-                            class="break-all leading-none font-semibold text-xl
-                            hover:text-brand whitespace-no-wrap" id="acc_name">{all_entity['Name']}</span></a><a id="acc_username_2" rel="noopener
+                            class="leading-none font-semibold text-xl
+                            hover:text-brand" id="acc_name">{all_entity['Name']}</span></a><a id="acc_username_2" rel="noopener
                         noreferrer"
                         target="_blank">
                         <h2 id="acc_username" class="font-medium text-lg
@@ -145,7 +144,7 @@ def generationPage(all_entity):
                                 12-12zm436-44v-36c0-26.5-21.5-48-48-48h-48V12c0-6.6-5.4-12-12-12h-40c-6.6
                                 0-12 5.4-12 12v52H160V12c0-6.6-5.4-12-12-12h-40c-6.6
                                 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v36c0 6.6
-                                5.4 12 12 12h424c6.6 0 12-5.4 12-12z" style="filter: hue-rotate(-215deg)">
+                                5.4 12 12 12h424c6.6 0 12-5.4 12-12z" style="color: #ff606c;">
                             </path>
                             </svg></span> <time datetime="2009-04-18T13:46:38.000Z"></time>
                         <a class="text-gray-800" id="acc_join_date">{all_entity['Date_1']}</a>г. - <a class="text-gray-800" id="acc_death_date">{all_entity['Date_2']}</a>г.</li>
@@ -160,7 +159,7 @@ def generationPage(all_entity):
                                 d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0
                                 85.961 85.961 0 192 0s192 85.961 192 192c0
                                 77.413-26.97 99.031-172.268 309.67-9.535
-                                13.774-29.93 13.773-39.464 0z" style="filter: hue-rotate(-215deg)">
+                                13.774-29.93 13.773-39.464 0z" style="color: #ff606c;">
                             </path>
                             </svg></span> <a class="text-gray-800" id="acc_location">{all_entity['City']}</a></li>
                             <li><span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="address-card" class="svg-inline--fa fa-address-card fa-w-18 fa-fw
@@ -179,7 +178,7 @@ def generationPage(all_entity):
                                 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0
                                 8 3.6 8 8v16zm0-64c0 4.4-3.6 8-8 8H360c-4.4
                                 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8
-                                8v16z" style="filter: hue-rotate(-215deg)">
+                                8v16z" style="color: #ff606c;">
                             </path>
                             </svg></span> <a
                             href="https://pamyat-naroda.ru/warunit/{all_entity['Units']}/"
