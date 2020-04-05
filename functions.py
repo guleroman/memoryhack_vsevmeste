@@ -5,7 +5,7 @@ from parseMap import getNewMap, getCorrectUnits
 def generationPage(all_entity):
 
     urll_2, Units = getCorrectUnits(all_entity['Units'])
-    newMap = getNewMap(Units)
+    newMap = getNewMap(urll_2)
 
     markup = f'''<!DOCTYPE html>
     <html style="font-family: FontAwesome;" lang="en">

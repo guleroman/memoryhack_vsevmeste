@@ -12,9 +12,9 @@ chrome_options.add_argument("window-size=1024,768")
 chrome_options.add_argument("user-agent=[Mozilla/5.0 (X11; Linux i586; rv:31.0) Gecko/20100101 Firefox/74.0]")
 chrome_options.add_argument("--no-sandbox")
 
-def getNewMap(Units):
+def getNewMap(urll_2):
     driver = webdriver.Chrome(executable_path=r'./chromedriver',options=chrome_options)
-    driver.get(f'https://pamyat-naroda.ru/warunit/{Units}/')
+    driver.get(f'{urll_2}')
     time.sleep(5)
     ymap = driver.find_element_by_css_selector('ymaps[class="ymaps-2-1-76-inner-panes"]')
     a = ymap.find_element_by_css_selector('ymaps[class="ymaps-2-1-76-ground-pane"]')
