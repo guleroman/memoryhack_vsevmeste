@@ -16,11 +16,14 @@ def getNewMap(urll_2):
     driver = webdriver.Chrome(executable_path=r'./chromedriver',options=chrome_options)
     driver.get(f'{urll_2}')
     time.sleep(5)
-    ymap = driver.find_element_by_css_selector('ymaps[class="ymaps-2-1-76-inner-panes"]')
-    a = ymap.find_element_by_css_selector('ymaps[class="ymaps-2-1-76-ground-pane"]')
-    b = ymap.find_element_by_css_selector('ymaps[class="ymaps-2-1-76-areas-pane"]')
-    c = ymap.find_element_by_css_selector('ymaps[class="ymaps-2-1-76-places-pane"]')
-    alll = f"""<div><ymaps class="ymaps-2-1-76-ground-pane" style="position: sticky;">{a.get_attribute('innerHTML')}</ymaps><ymaps class="ymaps-2-1-76-areas-pane" style="position: sticky;">{b.get_attribute('innerHTML')}</ymaps><ymaps class="ymaps-2-1-76-places-pane" style="position: sticky;">{c.get_attribute('innerHTML')}</ymaps></div>"""
+    try:
+        ymap = driver.find_element_by_css_selector('ymaps[class="ymaps-2-1-76-inner-panes"]')
+        a = ymap.find_element_by_css_selector('ymaps[class="ymaps-2-1-76-ground-pane"]')
+        b = ymap.find_element_by_css_selector('ymaps[class="ymaps-2-1-76-areas-pane"]')
+        c = ymap.find_element_by_css_selector('ymaps[class="ymaps-2-1-76-places-pane"]')
+        alll = f"""<div><ymaps class="ymaps-2-1-76-ground-pane" style="position: sticky;">{a.get_attribute('innerHTML')}</ymaps><ymaps class="ymaps-2-1-76-areas-pane" style="position: sticky;">{b.get_attribute('innerHTML')}</ymaps><ymaps class="ymaps-2-1-76-places-pane" style="position: sticky;">{c.get_attribute('innerHTML')}</ymaps></div>"""
+    except:
+        alll = """<div>К сожалению, данные о боевом пути не найдены</div>"""
     driver.quit()
     return(alll)
 
