@@ -9,7 +9,7 @@ from key_generation import generate_key
 
 
 def SendToGeneratePage(payload):
-    url = "http://194.67.91.175/api/v1/generatepage/"
+    url = "http://vsevmesteru.ru/api/v1/generatepage/"
     headers = {
     'Content-Type': 'application/json'
     }
