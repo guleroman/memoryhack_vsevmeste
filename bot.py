@@ -12,8 +12,8 @@ def SendToGeneratePage(payload):
     headers = {
     'Content-Type': 'application/json'
     }
-    print(payload)
-    response = requests.request("POST", url, headers=headers, data = payload)
+    print(payload.encode('utf-8'))
+    response = requests.request("POST", url, headers=headers, data = payload.encode('utf-8'))
     print(response.text.encode('utf8'))
     return(response.text.encode('utf8'))
 
