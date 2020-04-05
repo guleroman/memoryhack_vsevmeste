@@ -18,12 +18,6 @@ def readHtml(nameHtml):
     return(codeHtml)
 
 def writeHtml(new,name):
-    # print("+++++++++++++++++++++++++++"+new+"_______________++++++++++") #открываем файл с даннымина чтение
-    # print("+++++++++++++++++++++++++++"+str(new)+"_______________++++++++++") #открываем файл с даннымина чтение
-
-    # pathToFolderDone = os.path.join(path,"done")
-    # if not os.path.exists(pathToFolderDone): #Если пути не существует создаем его
-    #     os.makedirs(pathToFolderDone)
     with open("./templates/"+name, 'w', encoding='utf-8') as write_file:
         write_file.write(str(new))
     return('ok')

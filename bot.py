@@ -1,6 +1,34 @@
 # -*- coding: utf-8 -*-
 import telebot
 from telebot import types
+import requests
+# from key_generation import generate_key
+# from read_write import readData, writeDate
+
+
+
+def SendToGeneratePage(payload)
+    url = "http://194.67.91.175/api/v1/generatepage/"
+    headers = {
+    'Content-Type': 'application/json'
+    }
+    response = requests.request("POST", url, headers=headers, data = payload)
+    print(response.text.encode('utf8'))
+    return(response.text.encode('utf8'))
+
+
+dannnye = {
+    "0id": {
+	"name":"",
+	"foto":"",
+	"date_1":"",
+	"date_2":"12 июня 1944",
+	"description":"Вся наша семья гордится Дедом. Спасибо Ветераны за Победу!",
+	"city":"",
+	"units":"130 сп",
+    "url":""
+}}
+
 bot = telebot.TeleBot('1285880883:AAGV3yp19a1u8jud_kAUrhFTEhsltSmN8Fk')
 markup = types.ReplyKeyboardRemove(selective=False) 
 @bot.message_handler(commands=['menu'])
@@ -51,6 +79,7 @@ def fio_search(message):
     teamname=message.text
     try:
         ans="Получено: " + teamname#"Это имя
+        dannnye.update({message.chat.id:{"name":teamname,"units":"130 сп","description":"Вся наша семья гордится Дедом. Спасибо Ветераны за Победу!"}})
         load_menu_photo(message, text = ans)
     except Exception as e:
         bot.send_message(message.chat.id,e, reply_markup=markup)
@@ -73,8 +102,10 @@ def handle_docs_photo(message):
     fileID = message.photo[-1].file_id
     file_info = bot.get_file(fileID)
     downloaded_file = bot.download_file(file_info.file_path)
-    with open("image.jpg", 'wb') as new_file:
+    key = generate_key()
+    with open(f"{key}.jpg", 'wb') as new_file:
         new_file.write(downloaded_file)
+    dannnye.update({message.chat.id:{"foto":f"{key}.jpg"}})
     msg = bot.reply_to(message, ans)
     #msg =  bot.reply_to(message,"Получено")
     load_data(message, text = 'Спасибо! Введите дату или год рождения.')
@@ -89,6 +120,7 @@ def data_raw(message):
     ans="Введите город призыва"
     #load_city(message, text = ans)
     city = 'Дата: ' + message.text #Это дата
+    dannnye.update({message.chat.id:{"date_1":message.text}})
     bot.send_message(message.chat.id,city, reply_markup=markup)
     load_city(message, text = 'Спасибо! Введите город призыва.')
     bot.register_next_step_handler(message, city_raw)
@@ -99,14 +131,17 @@ def echo5(message):
     msg = bot.reply_to(message,"Введите город призыва")
 def city_raw(message):
     city = 'Город: ' + message.text#Это город
+    dannnye.update({message.chat.id:{"city":message.text}})
     bot.send_message(message.chat.id,city, reply_markup=markup)
+    urll = SendToGeneratePage(dannnye[message.chat.id])
+    dannnye.update({message.chat.id:{"url":urll}})
     load_report(message, text = 'Спасибо! Получите ссылку на отчет.')
     
 ###Отчет
 @bot.message_handler(func=lambda m: m.text is not None and 'Получить отчет' in m.text)
 def photo_msg(message):
     keyboard = types.InlineKeyboardMarkup()
-    switch_button = types.InlineKeyboardButton(text="Нажмите на меня", url="https://ya.ru")#поставить адрес
+    switch_button = types.InlineKeyboardButton(text="Нажмите на меня", url=dannnye[message.chat.id]['url'])#поставить адрес
     keyboard.add(switch_button)
     bot.send_message(message.chat.id, "Спасибо, что гордитесь Героями!", reply_markup=keyboard)
    
