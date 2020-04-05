@@ -2,7 +2,7 @@
 import telebot
 from telebot import types
 import requests
-# from key_generation import generate_key
+from key_generation import generate_key
 # from read_write import readData, writeDate
 
 
