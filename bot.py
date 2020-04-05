@@ -105,9 +105,9 @@ def handle_docs_photo(message):
     file_info = bot.get_file(fileID)
     downloaded_file = bot.download_file(file_info.file_path)
     key = generate_key()
-    with open(f"{key}.jpg", 'wb') as new_file:
+    with open(f"./static/images/{key}.jpg", 'wb') as new_file:
         new_file.write(downloaded_file)
-    dannnye[message.chat.id].update({"foto":f"{key}.jpg"})
+    dannnye[message.chat.id].update({"foto":f"./static/images/{key}.jpg"})
     msg = bot.reply_to(message, ans)
     #msg =  bot.reply_to(message,"Получено")
     load_data(message, text = 'Спасибо! Введите дату или год рождения.')
