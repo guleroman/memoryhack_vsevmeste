@@ -135,7 +135,7 @@ def city_raw(message):
     city = 'Город: ' + message.text#Это город
     dannnye[message.chat.id].update({"city":message.text})
     bot.send_message(message.chat.id,city, reply_markup=markup)
-    urll = SendToGeneratePage(dannnye[message.chat.id])
+    urll = SendToGeneratePage(dannnye[message.chat.id])['url']
     dannnye[message.chat.id].update({"url":urll})
     load_report(message, text = 'Спасибо! Получите ссылку на отчет.')
     
