@@ -184,7 +184,10 @@ def generationPage(all_entity):
                             </svg></span> <a
                             href="{urll_2}"
                             rel="noopener noreferrer" target="_blank"><span
-                            class="text-gray-800 hover:text-brand">{Units}</span></a></li>  
+                            class="text-gray-800 hover:text-brand">{Units}</span></a></li>
+                            <li><script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+                            <script src="https://yastatic.net/share2/share.js"></script>
+                            <div class="ya-share2" data-services="collections,vkontakte,facebook,odnoklassniki,twitter,linkedin,viber,whatsapp,telegram"></div></li>  
                     </ul>
                     </div>
                 </div>
